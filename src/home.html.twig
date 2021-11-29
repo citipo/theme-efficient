@@ -1,0 +1,35 @@
+<div class="home">
+    <div class="home-jumbo">
+        <div class="home-jumbo-intro">
+            <h2>
+                {{ jumbo_title }}
+            </h2>
+
+            <p>
+                {{ jumbo_content|raw }}
+            </p>
+        </div>
+
+        <div class="home-jumbo-image"
+             {% if jumbo_image %}style="background-image: url('{{ jumbo_image }}');"{% endif %}>
+
+            <div class="home-jumbo-overlay {{ jumbo_overlay ? 'home-jumbo-overlay-black' }}">
+                <div class="home-jumbo-intro-view">
+                    {% if blocks[0] is defined and blocks[0].type == 'cta' %}
+                        <div class="home-jumbo-buttons">
+                            {{ blocks[0].content|raw }}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="home-blocks">
+        {% for key, block in blocks %}
+            {% if key != 0 or block.type != 'cta' %}
+                {{ block.content|raw }}
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
