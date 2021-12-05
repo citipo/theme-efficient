@@ -11,7 +11,7 @@
         </div>
 
         <div class="home-jumbo-image"
-             {% if jumbo_image %}style="background-image: url('{{ jumbo_image }}');"{% endif %}>
+             style="background-image: url('{{ jumbo_image|default(citipo_theme_asset_url('assets/home-default.jpg')) }}');">
 
             <div class="home-jumbo-overlay {{ jumbo_overlay ? 'home-jumbo-overlay-black' }}">
                 <div class="home-jumbo-intro-view">

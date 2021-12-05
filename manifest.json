@@ -7,12 +7,25 @@
         "en": "The slogan and the main image are displayed side by side. Buttons are displayed on top of the main image and the slogan is displayed in a dedicated colored box.",
         "fr": "Le slogan et l'image principale sont placés en vis-à-vis. Les boutons sont affichés par dessus l'image principale et le slogan est affiché sur un applat de la couleur principale de votre thème."
     },
+    "defaultColors": {
+        "primary": "0F345C",
+        "secondary": "E83A7F",
+        "third": "2A568E"
+    },
+    "defaultFonts": {
+        "title": "Merriweather Sans",
+        "text": "Merriweather Sans"
+    },
     "thumbnail": "thumbnail.jpg",
     "templates": {
         "style": "src/style.css.twig",
+        "script": "src/script.js.twig",
         "head": "src/head.html.twig",
         "home": "src/home.html.twig",
         "list": "src/list.html.twig",
         "content": "src/content.html.twig"
-    }
+    },
+    "assets": [
+        "assets/home-default.jpg"
+    ]
 }
