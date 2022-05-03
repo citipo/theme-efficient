@@ -9,39 +9,39 @@
                 {% if facebook_url %}
                     <div class="col-lg-6 home-blocks-block-socials-facebook">
                         <div class="home-blocks-block-socials-block" {{ stimulus_controller('embed-consent', {
-                            'type': 'facebook',
-                            'url': payload.facebook_url,
-                            'titleLabel': payload.titleLabel,
-                            'descriptionLabel': payload.descriptionLabel,
-                            'acceptLabel': payload.acceptLabel,
-                            'externalLabel': payload.externalLabel,
-                            'cancelLabel': payload.cancelLabel,
+                            'type': 'facebook-timeline',
+                            'url': facebook_url,
+                            'titleLabel': titleLabel,
+                            'descriptionLabel': descriptionLabel,
+                            'acceptLabel': acceptLabel,
+                            'externalLabel': externalLabel,
+                            'cancelLabel': cancelLabel,
                         }) }}>
                             <div class="p-3">
-                                <a href="{{ payload.facebook_url }}" target="_blank" rel="noreferrer noopener">
+                                <a href="{{ facebook_url }}" target="_blank" rel="noreferrer noopener">
                                     <i class="fa fa-external-link mr-1"></i>
-                                    {{ payload.facebook_url }}
+                                    {{ facebook_url }}
                                 </a>
                             </div>
                         </div>
                     </div>
                 {% endif %}
 
-                {% if payload.twitter_url %}
+                {% if twitter_url %}
                     <div class="col-lg-6 home-blocks-block-socials-twitter">
                         <div class="home-blocks-block-socials-block" {{ stimulus_controller('embed-consent', {
                             'type': 'twitter-timeline',
-                            'url': payload.twitter_url,
-                            'titleLabel': payload.titleLabel,
-                            'descriptionLabel': payload.descriptionLabel,
-                            'acceptLabel': payload.acceptLabel,
-                            'externalLabel': payload.externalLabel,
-                            'cancelLabel': payload.cancelLabel,
+                            'url': twitter_url,
+                            'titleLabel': titleLabel,
+                            'descriptionLabel': descriptionLabel,
+                            'acceptLabel': acceptLabel,
+                            'externalLabel': externalLabel,
+                            'cancelLabel': cancelLabel,
                         }) }}>
                             <div class="p-3">
-                                <a href="{{ payload.twitter_url }}" target="_blank" rel="noreferrer noopener">
+                                <a href="{{ twitter_url }}" target="_blank" rel="noreferrer noopener">
                                     <i class="fa fa-external-link mr-1"></i>
-                                    {{ payload.twitter_url }}
+                                    {{ twitter_url }}
                                 </a>
                             </div>
                         </div>
