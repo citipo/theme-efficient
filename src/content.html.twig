@@ -49,19 +49,29 @@
         {% if video|default(null) %}
             {% if 'youtube' == video[0] %}
                 <div class="content-splash-video"
-                     style="background-image: url('https://i1.ytimg.com/vi/{{ video[1] }}/hqdefault.jpg')">
-                    <iframe width="1110" height="705" frameborder="0"
-                            src="https://www.youtube-nocookie.com/embed/{{ video[1] }}"
-                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
-                </div>
+                     style="background-image: url('https://i1.ytimg.com/vi/{{ video[1] }}/hqdefault.jpg')"
+                        {{ stimulus_controller('embed-consent', {
+                            'enableConsent': enable_embed_consent|default(true),
+                            'type': 'youtube-video',
+                            'url': 'https://www.youtube-nocookie.com/embed/' ~ video[1],
+                            'titleLabel': titleLabel,
+                            'descriptionLabel': descriptionLabel,
+                            'acceptLabel': acceptLabel,
+                            'externalLabel': externalLabel,
+                            'cancelLabel': cancelLabel,
+                        }) }}></div>
             {% elseif 'facebook' == video[0] %}
-                <div class="content-splash-video">
-                    <iframe width="1110" height="705" frameborder="0"
-                            src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/watch/?v={{ video[1] }}&show_text=false"
-                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
-                </div>
+                <div class="content-splash-video"
+                        {{ stimulus_controller('embed-consent', {
+                            'enableConsent': enable_embed_consent|default(true),
+                            'type': 'facebook-video',
+                            'url': 'https://www.facebook.com/watch/?v=' ~ video[1],
+                            'titleLabel': titleLabel,
+                            'descriptionLabel': descriptionLabel,
+                            'acceptLabel': acceptLabel,
+                            'externalLabel': externalLabel,
+                            'cancelLabel': cancelLabel,
+                        }) }}></div>
             {% endif %}
         {% elseif image|default(null) %}
             <img src="{{ image }}" class="content-splash-image" />

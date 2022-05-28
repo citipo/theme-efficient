@@ -9,6 +9,7 @@
                 {% if facebook_url %}
                     <div class="col-lg-6 home-blocks-block-socials-facebook">
                         <div class="home-blocks-block-socials-block" {{ stimulus_controller('embed-consent', {
+                            'enableConsent': enable_embed_consent|default(true),
                             'type': 'facebook-timeline',
                             'url': facebook_url,
                             'titleLabel': titleLabel,
@@ -30,6 +31,7 @@
                 {% if twitter_url %}
                     <div class="col-lg-6 home-blocks-block-socials-twitter">
                         <div class="home-blocks-block-socials-block" {{ stimulus_controller('embed-consent', {
+                            'enableConsent': enable_embed_consent|default(true),
                             'type': 'twitter-timeline',
                             'url': twitter_url,
                             'titleLabel': titleLabel,
